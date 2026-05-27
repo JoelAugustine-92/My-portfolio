@@ -1,0 +1,29 @@
+<% const current = typeof active !== 'undefined' ? active : ''; %>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">JOEL</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="<%= current === 'home' ? 'active' : '' %>">Home</a>
+            <a href="/about" class="<%= current === 'about' ? 'active' : '' %>">About</a>
+            <a href="/skills" class="<%= current === 'skills' ? 'active' : '' %>">Skills</a>
+            <a href="/education" class="<%= current === 'education' ? 'active' : '' %>">Education</a>
+          <a href="/projects" class="<%= current === 'projects' ? 'active' : '' %>">Projects</a>
+
+<a href="/certifications"
+class="<%= current === 'certifications' ? 'active' : '' %>">
+Certifications
+</a>
+
+<a href="/contact"
+class="<%= current === 'contact' ? 'active' : '' %>">
+Contact
+</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+    </div>
+</nav>
