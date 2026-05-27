@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title><%= title %> | Joel Portfolio</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
 
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %> | Joel Portfolio</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+  }
+
+});
+</script>
 <body>
 
     <%- include("../partials/navbar") %>
@@ -16,17 +36,7 @@
 
     <%- include("../partials/footer") %>
 
-    <!-- Move script here -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
-
-        if (hamburger) {
-            hamburger.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-            });
-        }
-    </script>
 
 </body>
+
 </html>

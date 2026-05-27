@@ -54,6 +54,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    position: relative;
 }
 
 .logo {
@@ -97,23 +99,6 @@ nav {
 .nav-links a.active {
     color: #ff2e63;
 }
-
-/* Hamburger */
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ff2e63;
-}
-/* ===== Footer ===== */
-footer {
-    text-align: center;
-    padding: 30px;
-    border-top: 1px solid #1f1f1f;
-    color: #777;
-    font-size: 14px;
-}
-
 /* ===== Headings ===== */
 h1 {
     font-size: 48px;
@@ -300,29 +285,6 @@ p {
 
     .hero-buttons {
         justify-content: center;
-    }
-}
-@media (max-width: 900px) {
-
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #0a0a0f;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 0;
-        gap: 25px;
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
     }
 }
 /* ===== About Page ===== */
@@ -1207,26 +1169,47 @@ color:black;
 font-weight:bold;
 }
 
-/* ===== Responsive ===== */
+/* ===== CSS ONLY HAMBURGER ===== */
 
-@media (max-width: 1100px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .featured-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .featured-image img {
-        width: 100%;
-        max-width: 400px;
-    }
+#menu-toggle{
+display:none;
 }
 
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:#ff2e63;
+}
+
+@media(max-width:900px){
+
+.hamburger{
+display:block;
+}
+
+.nav-links{
+
+display:none;
+
+position:absolute;
+
+top:100%;
+left:0;
+
+width:100%;
+
+background:#0a0a0f;
+
+flex-direction:column;
+
+padding:20px;
+
+gap:20px;
+}
+
+#menu-toggle:checked ~ .nav-links{
+display:flex;
+}
+
 }
